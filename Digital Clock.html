@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #heading{
+            background: cornsilk;
+        
+            width:50%;
+            margin:auto;
+
+        }
+        .container{
+            border:2px solid black;   
+            height:300px;
+    width:50%;
+    margin:auto;
+border-radius: 30px;;
+/* display: flex;
+justify-content: center; */
+background: rgb(184, 136, 136);
+        }
+        .container1{
+            display: flex;
+flex-direction: row;
+width:30%;
+margin:auto;
+        }
+#hrs{
+    border:2px solid white;
+    background: black;
+    display: flex;
+   align-items: center;
+   text-align: center;
+    height:30px;
+    color:white;
+    width:50px;
+}
+#min{
+   
+    border:2px solid white;
+    background: black;
+    display: flex;
+    align-items: center;
+    color:white;
+    height:30px;
+    width:50px;
+}
+#sec{
+    border:2px solid white;
+    background: black;
+    display: flex;
+    align-items: center;
+    color:white;
+    height:30px;
+    width:50px;
+}
+#ap{
+    border:2px solid white;
+    background: black;
+    display: flex;
+    align-items: center;
+    color:white;
+    height:30px;
+    width:50px;
+}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="heading">    <h1>Digital Clock By RNZ</h1></div>
+
+<div class="container1">
+    <div id="hrs">
+        <!-- hours -->
+        </div>
+        <div id="min">
+        <!-- min -->
+        </div>
+        <div id="sec">
+        <!-- sec -->
+        </div>
+        <div id="ap">
+            <!-- sec -->
+            </div>
+</div>
+</div>
+<script>
+    setInterval(() => {
+        a= new Date();
+hrs= a.getHours();
+min= a.getMinutes();
+sec= a.getSeconds();
+ 
+if( hrs > 12) {
+//    console.log('pm');
+hrs=hrs-12;
+document.getElementById('hrs').innerHTML = hrs;
+document.getElementById('ap').innerHTML = "PM";
+ }
+ else{
+    hrs= a.getHours();
+    document.getElementById('hrs').innerHTML = hrs;
+    document.getElementById('ap').innerHTML = "AM";
+ }
+
+document.getElementById('min').innerHTML = min;
+document.getElementById('sec').innerHTML = sec;
+    }, 1000);
+
+</script>
+</body>
+</html>
